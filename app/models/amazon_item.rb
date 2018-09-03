@@ -1,5 +1,5 @@
 class AmazonItem
-  def fetch_amazon_item(keyword)
+  def self.fetch_amazon_item(keyword)
     items = search(keyword)
     filter_item items
   end
