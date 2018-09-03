@@ -1,0 +1,13 @@
+<header class="header">
+  <div class="header-right">
+    <%= link_to "Kings", "/" %>
+  </div>
+  <div class="header-left">
+    <% if user_signed_in? %>
+      <%= link_to "マイページ", "/users/#{current_user.id}" %>
+    <% else %>
+      <%= link_to "新規登録", "/users/sign_up" %>
+      <%= link_to "ログイン", "/users/sign_in" %>
+    <% end%>
+  </div>
+</header>

@@ -10,14 +10,7 @@
   </head>
 
   <body>
-    <header>
-      <%= link_to "Kings", "/", { :class => "navbar-brand" } %>
-      <% if user_signed_in? %>
-        <%= link_to "マイページ", "/users/#{current_user.id}", { :class => "btn btn-primary" } %>
-      <% else %>
-        <%= link_to "ログインする", "/users/sign_in", { :class => "btn btn-primary" } %>
-      <% end%>
-    </header>
+    <%= render 'share/header' %>
     <%= yield %>
   </body>
 </html>
