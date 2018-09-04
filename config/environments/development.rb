@@ -58,4 +58,10 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  #Amazon
+  Amazon::Ecs.options = {
+    associate_tag: ENV['ASSOCIATE_TAG'],
+    AWS_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+    AWS_secret_key: ENV['AWS_SECRET_KEY'],
+  }
 end
