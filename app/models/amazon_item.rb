@@ -6,7 +6,7 @@ class AmazonItem
 
   private
 
-  def search(keyword)
+  def self.search(keyword)
     Amazon::Ecs.debug = false
     Amazon::Ecs.item_search(
       keyword,
@@ -17,7 +17,7 @@ class AmazonItem
     )
   end
 
-  def filter_item(items)
+  def self.filter_item(items)
     search_items = items.map do |item|
       {
         cosmetic_title: item.get('ItemAttributes/Title'),

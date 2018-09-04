@@ -1,0 +1,8 @@
+<div class="cusmetics-search">
+  <div id="search-box">
+    <%= form_tag('/search/cosmetic', method: :get) do %>
+      <%= text_field_tag :cosmetics, "",  id: "item_search", name: "keyword", placeholder: "キーワードを打ち込んでください", style: "width: 200px;"%><button title="検索" type="submit">検索</button>
+    <% end %>
+  </div>
+  <%= render :partial => "result" %>
+</div>

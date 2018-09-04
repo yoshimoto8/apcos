@@ -1,0 +1,17 @@
+<% if @search_items.present? %>
+  <div class="cusmetics-search__results">
+    <% @search_items.each do |item| %>
+      <div class="cusmetics-search__results__box card">
+        <div class="cusmetics-search__results__box__iamge">
+          <% if item[:image_url].present? %>
+            <%= image_tag(item[:image_url], style: "width: 70px;height:100px;display: inline-block;", class: "card-img-top", alt: "Card image cap") %>
+          <% end %>
+        </div>
+        <h6 class="card-title cusmetics-search__results__box__item"><%= item[:title] %></h6>
+        <%= link_to "このレビューを書く", {:controller => "reviews", :action => "create_page", :item_image => item[:image_url], :item_title => item[:title], :cosmetics_url => item[:url]} ,:method => :post, :class => "btn btn-primary cusmetics-search__results__box__link_review" %>
+        <%= link_to "Go to Amazon", item[:url], { :class => "btn btn-primary cusmetics-search__results__box__link_amazon" } %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+

@@ -2,7 +2,7 @@ class Finder
   # fetch myself database and Amazon API
   def self.fetch_cosmetic(keyword)
     # cosmetic = fetch_cosmetic(keyword)
-    amazon_item = fetch_amazon_item keyword
+    amazon_item = fetch_amazon_items keyword
     [amazon_item]
   end
 
@@ -12,11 +12,11 @@ class Finder
 
   private
 
-  def fetch_cosmetic(keyword)
+  def self.fetch_cosmetic(keyword)
     Cosmetic.fetch_cosmetic keyword
   end
 
-  def fetch_amazon_item(keyword)
+  def self.fetch_amazon_items(keyword)
     AmazonItem.fetch_amazon_item keyword
   end
 end
